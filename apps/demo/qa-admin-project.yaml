@@ -14,6 +14,8 @@ spec:
       namespace: qa4
     - server: https://kubernetes.default.svc
       namespace: qa5
+      server: https://kubernetes.default.svc
+    - namespace: argocd
   namespaceResourceWhitelist:
     - group: '*'  # Allow to manage ALL resource types inside namespaces
       kind: '*'
