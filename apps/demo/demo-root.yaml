@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo-root
+  namespace: argocd
+spec:
+  project: qa-admin-project
+  source:
+    repoURL: https://github.com/VETRI9876/argocd-rbac.git
+    targetRevision: main
+    path: apps/demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    syncOptions:
+      - ApplyOutOfSyncOnly=true

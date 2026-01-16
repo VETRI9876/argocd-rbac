@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: qa-admin-project
+  namespace: argocd
+spec:
+  description: QA admin access limited to qa3, qa4, qa5 only
+  sourceRepos:
+    - '*'
+  destinations:
+    - server: https://kubernetes.default.svc
+      namespace: qa3
+    - server: https://kubernetes.default.svc
+      namespace: qa4
+    - server: https://kubernetes.default.svc
+      namespace: qa5
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  orphanedResources:
+    warn: true
