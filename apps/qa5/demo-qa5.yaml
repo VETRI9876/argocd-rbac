@@ -4,7 +4,7 @@ metadata:
   name: demo-qa5
   namespace: argocd
 spec:
-  project: qa-admin-project
+  project: qa5-project
   source:
     repoURL: https://github.com/argoproj/argocd-example-apps.git
     targetRevision: HEAD

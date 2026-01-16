@@ -1,0 +1,14 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-qa2
+  namespace: argocd
+spec:
+  project: qa2-project
+  source:
+    repoURL: https://github.com/VETRI9876/argocd-rbac.git
+    targetRevision: main
+    path: apps/qa2
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
