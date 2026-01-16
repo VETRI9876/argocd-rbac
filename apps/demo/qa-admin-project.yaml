@@ -6,7 +6,7 @@ metadata:
 spec:
   description: QA admin access limited to qa3, qa4, qa5 only
   sourceRepos:
-    - '*'
+    - https://github.com/VETRI9876/argocd-rbac.git
   destinations:
     - server: https://kubernetes.default.svc
       namespace: qa3
@@ -15,10 +15,10 @@ spec:
     - server: https://kubernetes.default.svc
       namespace: qa5
   namespaceResourceWhitelist:
-    - group: '*'
+    - group: '*'  # Allow to manage ALL resource types inside namespaces
       kind: '*'
   clusterResourceWhitelist:
-    - group: '*'
+    - group: '*'  # Allow to manage ALL cluster-level resources
       kind: '*'
   orphanedResources:
     warn: true
