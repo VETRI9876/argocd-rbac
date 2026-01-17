@@ -28,3 +28,6 @@ spec:
     policies:
     - p, proj:qa4-project:readonly, applications, get, qa4-project/*, allow
     - p, proj:qa4-project:readonly, applications, list, qa4-project/*, allow
+    - p, proj:qa3-project:admin, applications, sync, qa3-project/*, allow
+    - p, proj:qa3-project:admin, applications, delete, qa3-project/*, allow
+    
