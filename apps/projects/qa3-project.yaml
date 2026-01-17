@@ -7,9 +7,12 @@ spec:
   description: QA3 environment
   sourceRepos:
   - https://github.com/VETRI9876/argocd-rbac.git
+  - https://github.com/argoproj/argocd-example-apps.git
   destinations:
   - namespace: qa3
     server: https://kubernetes.default.svc
+  - namespace: argocd
+    server: https://kubernetes.default.svc  
   roles:
   - name: admin
     description: Admin access to QA3

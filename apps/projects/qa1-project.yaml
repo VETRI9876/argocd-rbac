@@ -7,8 +7,11 @@ spec:
   description: QA1 environment (read-only only)
   sourceRepos:
   - https://github.com/VETRI9876/argocd-rbac.git
+  - https://github.com/argoproj/argocd-example-apps.git
   destinations:
   - namespace: qa1
+    server: https://kubernetes.default.svc
+  - namespace: argocd
     server: https://kubernetes.default.svc
   roles:
   - name: readonly
