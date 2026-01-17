@@ -4,7 +4,7 @@ metadata:
   name: qa1-project
   namespace: argocd
 spec:
-  description: QA1 environment (read-only for all users)
+  description: QA1 environment (read-only only)
   sourceRepos:
   - https://github.com/VETRI9876/argocd-rbac.git
   destinations:
