@@ -20,8 +20,6 @@ spec:
     - e80ad58d-c54d-4082-8cf0-157e2120d081
     policies:
     - p, proj:qa3-project:admin, applications, *, qa3-project/*, allow
-    - p, proj:qa3-project:admin, applications, sync, qa3-project/*, allow
-    - p, proj:qa3-project:admin, applications, delete, qa3-project/*, allow
 
   - name: readonly
     description: Read-only access to QA3
