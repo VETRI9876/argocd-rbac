@@ -17,14 +17,14 @@ spec:
   - name: admin
     description: Admin access to QA5
     groups:
-    - e80ad58d-c54d-4082-8cf0-157e2120d081
+    - neuvector-admin
     policies:
     - p, proj:qa5-project:admin, applications, *, qa5-project/*, allow
 
   - name: readonly
     description: Read-only access to QA5
     groups:
-    - ca320113-f856-4e4c-bdc9-0bf23d828854
+    - ARGO-CD-TestGroup-Iskan
     policies:
     - p, proj:qa5-project:readonly, applications, get, qa5-project/*, allow
     - p, proj:qa5-project:readonly, applications, list, qa5-project/*, allow
