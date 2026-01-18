@@ -19,7 +19,12 @@ spec:
     groups:
     - neuvector-admin
     policies:
-    - p, proj:qa4-project:admin, applications, *, qa4-project/*, allow
+    - p, proj:qa4-project:admin, applications, get, qa4-project/*, allow
+    - p, proj:qa4-project:admin, applications, list, qa4-project/*, allow
+    - p, proj:qa4-project:admin, applications, sync, qa4-project/*, allow
+    - p, proj:qa4-project:admin, applications, update, qa4-project/*, allow
+    - p, proj:qa4-project:admin, applications, delete, qa4-project/*, allow
+    - p, proj:qa4-project:admin, applications, create, qa4-project/*, allow
 
   - name: readonly
     description: Read-only access to QA4
