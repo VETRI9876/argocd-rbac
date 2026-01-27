@@ -6,30 +6,42 @@ metadata:
 spec:
   description: QA5 environment
   sourceRepos:
-  - https://github.com/VETRI9876/argocd-rbac.git
-  - https://github.com/argoproj/argocd-example-apps.git
-  destinations:
-  - namespace: qa5
-    server: https://kubernetes.default.svc
-  - namespace: argocd
-    server: https://kubernetes.default.svc
-  roles:
-  - name: admin
-    description: Admin access to QA5
-    groups:
-    - neuvector-admin
-    policies:
-    - p, proj:qa5-project:admin, applications, get, qa5-project/*, allow
-    - p, proj:qa5-project:admin, applications, list, qa5-project/*, allow
-    - p, proj:qa5-project:admin, applications, sync, qa5-project/*, allow
-    - p, proj:qa5-project:admin, applications, update, qa5-project/*, allow
-    - p, proj:qa5-project:admin, applications, delete, qa5-project/*, allow
-    - p, proj:qa5-project:admin, applications, create, qa5-project/*, allow
+    - https://github.com/VETRI9876/argocd-rbac.git
+    - https://github.com/argoproj/argocd-example-apps.git
 
-  - name: readonly
-    description: Read-only access to QA5
-    groups:
-    - ARGO-CD-TestGroup-Iskan
-    policies:
-    - p, proj:qa5-project:readonly, applications, get, qa5-project/*, allow
-    - p, proj:qa5-project:readonly, applications, list, qa5-project/*, allow
+  destinations:
+    - namespace: qa5
+      server: https://kubernetes.default.svc
+    - namespace: argocd
+      server: https://kubernetes.default.svc
+
+  roles:
+    - name: admin
+      description: Admin access to QA5
+      groups:
+        - neuvector-admin
+      policies:
+        - p, proj:qa5-project:admin, applications, get, qa5-project/*, allow
+        - p, proj:qa5-project:admin, applications, list, qa5-project/*, allow
+        - p, proj:qa5-project:admin, applications, sync, qa5-project/*, allow
+        - p, proj:qa5-project:admin, applications, update, qa5-project/*, allow
+        - p, proj:qa5-project:admin, applications, delete, qa5-project/*, allow
+        - p, proj:qa5-project:admin, applications, create, qa5-project/*, allow
+
+    - name: readonly
+      description: Read-only access to QA5
+      groups:
+        - ARGO-CD-TestGroup-Iskan
+      policies:
+        - p, proj:qa5-project:readonly, applications, get, qa5-project/*, allow
+        - p, proj:qa5-project:readonly, applications, list, qa5-project/*, allow
+
+    - name: restricted-admin
+      description: Restricted Admin (sync/update only)
+      groups:
+        - ADF-FDF-POC-TEST
+      policies:
+        - p, proj:qa5-project:restricted-admin, applications, get, qa5-project/*, allow
+        - p, proj:qa5-project:restricted-admin, applications, list, qa5-project/*, allow
+        - p, proj:qa5-project:restricted-admin, applications, sync, qa5-project/*, allow
+        - p, proj:qa5-project:restricted-admin, applications, update, qa5-project/*, allow
