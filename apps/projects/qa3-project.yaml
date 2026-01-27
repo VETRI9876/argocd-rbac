@@ -19,7 +19,7 @@ spec:
     - name: admin
       description: Admin access to QA3
       groups:
-        - ca320113-f856-4e4c-bdc9-0bf23d828854 # ARGO-CD-TestGroup-Iskan
+        - ARGO-CD-TestGroup-Iskan #ca320113-f856-4e4c-bdc9-0bf23d828854 
       policies:
         - p, proj:qa3-project:admin, applications, get, qa3-project/*, allow
         - p, proj:qa3-project:admin, applications, list, qa3-project/*, allow
@@ -31,7 +31,7 @@ spec:
     - name: readonly
       description: Read-only access to QA3
       groups:
-        - e80ad58d-c54d-4082-8cf0-157e2120d081 # neuvector-admin
+        - neuvector-admin #e80ad58d-c54d-4082-8cf0-157e2120d081
       policies:
         - p, proj:qa3-project:readonly, applications, get, qa3-project/*, allow
         - p, proj:qa3-project:readonly, applications, list, qa3-project/*, allow
@@ -39,7 +39,7 @@ spec:
     - name: restricted-admin
       description: Restricted Admin (sync/update only)
       groups:
-        - e17ea958-23ad-4152-8506-473b8ce6fe3a # ADF-FDF-POC-TEST (Restricted Admin)
+        - ADF-FDF-POC-TEST #e17ea958-23ad-4152-8506-473b8ce6fe3a 
       policies:
         - p, proj:qa3-project:restricted-admin, applications, get, qa3-project/*, allow
         - p, proj:qa3-project:restricted-admin, applications, list, qa3-project/*, allow

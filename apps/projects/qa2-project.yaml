@@ -17,7 +17,7 @@ spec:
   - name: readonly
     description: Read-only access to QA2
     groups:
-    - e80ad58d-c54d-4082-8cf0-157e2120d081 # neuvector-admin
+    - neuvector-admin #e80ad58d-c54d-4082-8cf0-157e2120d081
     policies:
     - p, proj:qa2-project:readonly, applications, get, qa2-project/*, allow
     - p, proj:qa2-project:readonly, applications, list, qa2-project/*, allow
