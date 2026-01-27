@@ -17,7 +17,7 @@ spec:
   - name: readonly
     description: Read-only access to QA1
     groups:
-    - ARGO-CD-TestGroup-Iskan
+    - e80ad58d-c54d-4082-8cf0-157e2120d081 # neuvector-admin
     policies:
     - p, proj:qa1-project:readonly, applications, get, qa1-project/*, allow
     - p, proj:qa1-project:readonly, applications, list, qa1-project/*, allow
